@@ -1,3 +1,5 @@
+**Language:** VBA
+
 # Patches added to refine process to eliminate potential errors, bottlenecks, and more dynamic process to account for nuance
 
 Sub CleanSummary()
