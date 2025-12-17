@@ -1,0 +1,59 @@
+# Patches added to refine process to eliminate potential errors, bottlenecks, and more dynamic process to account for nuance
+
+Sub CleanSummary()
+
+'
+
+' CleanSummary Macro
+
+'
+
+' Keyboard Shortcut: Ctrl+t
+
+'
+
+    Range("A1").Select
+
+    Cells.Find(What:="Total Raw Materials", After:=ActiveCell, LookIn:= _
+
+        xlFormulas, LookAt:=xlPart, SearchOrder:=xlByRows, SearchDirection:= _
+
+        xlNext, MatchCase:=False, SearchFormat:=False).Activate
+
+    ActiveCell.Range("A1:K40").Select
+
+    Selection.Cut
+
+    Sheets("Sheet3").Select
+
+    Range("A1").Select
+
+    ActiveSheet.Paste
+
+    Application.Run "PERSONAL.XLSB!Summary"
+
+    Range("A1:K40").Select
+
+    Selection.Cut
+
+    Sheets("Sheet2").Select
+
+    Cells.Find(What:="Packaging", After:=ActiveCell, LookIn:=xlFormulas, _
+
+        LookAt:=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, _
+
+        MatchCase:=False, SearchFormat:=False).Activate
+
+    ActiveCell.Offset(1, 0).Range("A1").Select
+
+    ActiveSheet.Paste
+
+    Range("A1").Select
+
+    ActiveWindow.SmallScroll Down:=12
+
+    Range("M38").Select
+
+    ActiveWindow.SmallScroll Down:=-45
+
+    Range("A1").Select
